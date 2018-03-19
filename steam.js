@@ -27,5 +27,5 @@ io.on('connection', function (socket) {
 app.use("/",express.static(__dirname));
 
 app.listen(port, function () {
-    console.log('listening on *:'+port);
+    console.log('listening on :'+port);
 });
