@@ -2,7 +2,6 @@ var Twitter = require('node-tweet-stream');
 var express = require('express'); // Get the module
 var app = express();
 var http = require('http').Server(app);
-var port = process.env.port || 3000;
 var io = require('socket.io')(http);
 var t = new Twitter({
     consumer_key: 'm1U7OV4rD7Oko1FfysSzfc4pU',
@@ -26,6 +25,6 @@ io.on('connection', function (socket) {
 
 app.use("/",express.static(__dirname));
 
-app.listen(port, function () {
-    console.log('listening on :'+port);
+app.listen(process.env.PORT ||3000, function () {
+    console.log('listening on :'+process.env.PORT);
 });
